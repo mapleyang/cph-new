@@ -14,19 +14,19 @@ const formItemLayout = {
 };
 
 const medicines = [{
-  label: "心理治疗方案一",
+  label: "行为治疗方案一",
   value: "1",
   price: "100"
 },{
-  label: "心理治疗方案二",
+  label: "行为治疗方案二",
   value: "2",
   price: "200",
 },{
-  label: "心理治疗方案三",
+  label: "行为治疗方案三",
   value: "3",
   price: "400"
 },{
-  label: "心理治疗方案四",
+  label: "行为治疗方案四",
   value: "4",
   price: "400"
 }]
@@ -194,7 +194,7 @@ class MindCure extends Component {
             </Col>
             <Col span={10}>
               <div className="cure-main-desc">
-                <div className="cure-main-name">心理戒烟</div>
+                <div className="cure-main-name">行为治疗</div>
                 <div className="cure-main-content medicine-main-content">专业的心理咨询团队，改变自己的习惯，达到戒烟的目的。</div>
                 {this.getPriceItem()}
                 <div className="cure-main-items">

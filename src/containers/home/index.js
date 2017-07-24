@@ -97,7 +97,7 @@ class Home extends Component {
                 <div className="entry-content-title" onClick={this.linkClick.bind(this, "msgcure")}>短信戒烟</div>
               </Col>
               <Col span={6}>
-                <div className="entry-content-title" onClick={this.linkClick.bind(this, "mindcure")}>心理戒烟</div>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "mindcure")}>行为治疗</div>
               </Col>
               <Col span={6}>
                 <div className="entry-content-title" onClick={this.linkClick.bind(this, "medicinecure")}>药物戒烟</div>
@@ -119,6 +119,9 @@ class Home extends Component {
                 <div className="entry-content-title" onClick={this.linkClick.bind(this, "truth")}>戒烟游戏</div>
               </Col>
               <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "truth")}>戒烟知识</div>
+              </Col>
+              <Col span={6}>
                 <div className="entry-content-title" onClick={this.linkClick.bind(this, "compete")}>戒烟知识竞赛</div>
               </Col>
             </Row>
@@ -135,13 +138,13 @@ class Home extends Component {
           <Col span={14}>
             <Row>
               <Col span={6}>
-                <div className="entry-content-title" onClick={this.linkClick.bind(this, "disease")}>戒烟知识</div>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "coach")}>戒烟教练</div>
               </Col>
               <Col span={6}>
                 <div className="entry-content-title" onClick={this.linkClick.bind(this, "commonweal")}>戒烟公益</div>
               </Col>
               <Col span={6}>
-                <div className="entry-content-title" onClick={this.linkClick.bind(this, "coach")}>戒烟教练</div>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "disease")}>公司戒烟策划</div>
               </Col>
               <Col span={6}>
                 <div className="entry-content-title" onClick={this.linkClick.bind(this, "child")}>孩子-无烟</div>

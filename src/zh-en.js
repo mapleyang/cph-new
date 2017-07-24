@@ -12,7 +12,7 @@ const ZH_EN = {
     "header.menu.project": "戒烟方案",
     "header.menu.mark": "戒烟打卡",
     "header.menu.mine": "我的健康之路",
-    "header.menu.knowledge": "烟草知识",
+    "header.menu.knowledge": "戒烟知识",
     "header.menu.more": "更多",
     "analysis.questions": Questions.zh,
     "analysis.plan": Plan.zh,

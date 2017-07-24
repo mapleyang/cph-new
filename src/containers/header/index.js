@@ -100,28 +100,27 @@ class Header extends Component {
                 </span>
               </Menu.Item>
               <SubMenu title={<span><FormattedMessage id="header.menu.active" defaultMessage={defaultZH_EN['header.menu.active']}/></span>}>
-                <Menu.Item key="analysis">戒烟健康分析</Menu.Item>
-                <Menu.Item key="share">分享&解答</Menu.Item>
                 <Menu.Item key="coach">戒烟教练</Menu.Item>
-                <Menu.Item key="child">孩子-无烟</Menu.Item>
+                <Menu.Item key="commonweal">戒烟公益</Menu.Item>
+                <Menu.Item key="share">公司戒烟规划</Menu.Item>
+                <Menu.Item key="child">孩子无烟</Menu.Item>
               </SubMenu>
               <SubMenu title={<span><FormattedMessage id="header.menu.project" defaultMessage={defaultZH_EN['header.menu.project']}/></span>}>
                 <Menu.Item key="selfcure">自助戒烟</Menu.Item>
                 <Menu.Item key="msgcure">短信戒烟</Menu.Item>
-                <Menu.Item key="mindcure">心理戒烟</Menu.Item>
+                <Menu.Item key="mindcure">行为治疗</Menu.Item>
                 <Menu.Item key="medicinecure">药物戒烟</Menu.Item>
-                <Menu.Item key="medicinecure">诊所戒烟</Menu.Item>
               </SubMenu>
               <Menu.Item key="mark">
                 <FormattedMessage id="header.menu.mark" defaultMessage={defaultZH_EN['header.menu.mark']}/>
               </Menu.Item>
               <SubMenu title={<span><FormattedMessage id="header.menu.mine" defaultMessage={defaultZH_EN['header.menu.mine']}/></span>}>
+                <Menu.Item key="analysis">戒烟健康分析</Menu.Item>
                 <Menu.Item key="calendar">戒烟日历</Menu.Item>
                 <Menu.Item key="myplan">戒烟计划</Menu.Item>
                 <Menu.Item key="diary">戒烟日记</Menu.Item>
                 <Menu.Item key="result">戒烟成果</Menu.Item>
                 <Menu.Item key="health">我的健康</Menu.Item>
-                <Menu.Item key="commonweal">戒烟公益</Menu.Item>
               </SubMenu>
               <SubMenu title={<span><FormattedMessage id="header.menu.knowledge" defaultMessage={defaultZH_EN['header.menu.knowledge']}/></span>}>
                 <Menu.Item key="disease">烟草-癌症和健康</Menu.Item>
