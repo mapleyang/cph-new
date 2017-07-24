@@ -209,13 +209,10 @@ class SelfCure extends Component {
             <div className="cure-detail-content">
               <Tabs defaultActiveKey="2">
                 <TabPane tab={<span><Icon type="exception" />治疗说明</span>} key="1">
-                  Tab 1
                 </TabPane>
                 <TabPane tab={<span><Icon type="solution" />套餐说明</span>} key="2">
-                  Tab 2
                 </TabPane>
                 <TabPane tab={<span><Icon type="medicine-box" />服务说明</span>} key="3">
-                  Tab 2
                 </TabPane>
               </Tabs>
             </div>
