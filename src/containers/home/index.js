@@ -170,10 +170,20 @@ class Home extends Component {
     location.hash = "/" + value;
   }
 
+  activityTipClick (value) {
+    location.hash = "/" + value;
+  }
+
   render() {
     const defaultZH_EN = window.ZH_EN[language.getLanguage()];
     return (
       <div className="home">
+        <div className="activity-tip">
+          <Carousel vertical autoplay dots={false}>
+          <div className="activity-tip-item" onClick={this.activityTipClick.bind(this, "child")}>2017-08-08 将在上海举行家庭无烟活动，>>>请点击报名。</div>
+          <div className="activity-tip-item" onClick={this.activityTipClick.bind(this, "coach")}>2017-09-01 将在上海征集戒烟教练，>>>请点击报名。</div>
+        </Carousel>
+        </div>
         <div id="desc" className="home-main-desc">
           <div className="home-main-detail">
             <div className="home-main-desc-content home-main-desc-title">{defaultZH_EN["home.index"].main.title}</div>

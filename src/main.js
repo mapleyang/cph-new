@@ -23,6 +23,7 @@ import Analysis from "./containers/activities/analysis"
 import Coach from "./containers/activities/coach"
 import Share from "./containers/activities/share"
 import Plan from "./containers/activities/plan"
+import Child from "./containers/activities/child"
 import Calendar from "./containers/myhealth/calendar"
 import Diary from "./containers/myhealth/diary"
 import Result from "./containers/myhealth/result"
@@ -108,6 +109,8 @@ const ready = () => {
             <Route path="/en/share" component={Share}></Route>
             <Route path="/plan" component={Plan}></Route>
             <Route path="/en/plan" component={Plan}></Route>
+            <Route path="/child" component={Child}></Route>
+            <Route path="/en/child" component={Child}></Route>
             <Route path="/mark" component={Mark}></Route>
             <Route path="/en/mark" component={Mark}></Route>
             <Route path="/selfcure" component={SelfCure}></Route>

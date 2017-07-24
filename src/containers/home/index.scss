@@ -1,4 +1,12 @@
 .home {
+  .activity-tip {
+    padding-left: 20px;
+    cursor: pointer;
+    height: 30px;
+    .activity-tip-item {
+      line-height: 30px;
+    }
+  }
   .home-main-desc {
     height: 350px;
     position: fixed;
