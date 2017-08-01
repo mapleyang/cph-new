@@ -225,7 +225,7 @@ class Home extends Component {
             </Row>
           </div>
         </div>
-        <div className="home-main-area" style={{background: "url(./home.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
+        <div className="home-main-area" style={{background: "url(./home.png)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
         </div>
         <div className="home-main-data" style={{background: "url(./home1.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
           <div className="home-main-data-desc">
