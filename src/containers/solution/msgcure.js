@@ -158,23 +158,23 @@ class MsgCure extends Component {
   getPriceItem () {
     let item = "";
     let price = 0;
-    if(this.state.chooseSlections.length !== 0) {
-      this.state.chooseSlections.forEach(el => {
-        price += parseInt(el.price);
-      })
-      item = <div className="cure-main-price">
-        <span className="cure-main-price-title">价格合计：</span>
-        <span className="cure-main-price-mark">¥</span>
-        <span className="cure-main-price-value">{price}</span>
-      </div>
-    }
-    else {
-      item = <div className="cure-main-price">
-        <span className="cure-main-price-title">价格：</span>
-        <span className="cure-main-price-mark">¥</span>
-        <span className="cure-main-price-value">100 ~ 1000</span>
-      </div>
-    }
+    item = <div className="cure-main-price">
+      <span className="cure-main-price-title">价格合计：</span>
+      <span className="cure-main-price-mark">¥</span>
+      <span className="cure-main-price-value">200</span>
+    </div>
+    // if(this.state.chooseSlections.length !== 0) {
+    //   this.state.chooseSlections.forEach(el => {
+    //     price += parseInt(el.price);
+    //   })
+    // }
+    // else {
+    //   item = <div className="cure-main-price">
+    //     <span className="cure-main-price-title">价格：</span>
+    //     <span className="cure-main-price-mark">¥</span>
+    //     <span className="cure-main-price-value">100 ~ 1000</span>
+    //   </div>
+    // }
     return item;
   }
 
@@ -199,7 +199,6 @@ class MsgCure extends Component {
                 {this.getPriceItem()}
                 <div className="cure-main-items">
                   <div className="cure-main-item">
-                    {this.getSelection()}
                   </div>
                 </div>
                 <Button className="cure-join" type="primary" onClick={this.startClick.bind(this)}>加入我的戒烟计划</Button>

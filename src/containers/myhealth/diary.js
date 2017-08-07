@@ -15,85 +15,59 @@ const formItemLayout = {
 
 
 const columns = [{
-  title: 'Time',
+  title: '时间',
   dataIndex: 'Time',
   key: 'Time',
 }, {
-  title: 'Place',
-  dataIndex: 'Place',
-  key: 'Place',
+  title: '日记名称',
+  dataIndex: 'name',
+  key: 'name',
 }, {
-  title: 'What I was doing',
-  dataIndex: 'sence',
-  key: 'sence',
-}, {
-  title: 'Craving level',
-  dataIndex: 'level',
-  key: 'level',
-},{
-  title: 'Feeling ',
+  title: '心情',
   dataIndex: 'Feeling',
   key: 'Feeling',
+}, {
+  title: '事件',
+  dataIndex: 'event',
+  key: 'level',
 },{
-  title: 'What I did',
-  dataIndex: 'solve',
-  key: 'solve',
-},{
-  title: 'effective',
-  dataIndex: 'effective',
-  key: 'effective',
-},{
-  title: 'try next',
-  dataIndex: 'nextTry',
-  key: 'nextTry',
+  title: '操作',
+  dataIndex: 'operrate',
+  key: 'operrate',
+  render: (text, record) => (
+    <div>
+      <span style={{paddingRight: 10}}><a>编辑</a></span>
+      <span style={{paddingRight: 10}}><a>查看</a></span>
+      <span style={{paddingRight: 10}}><a>删除</a></span>
+    </div>
+  ),
 }];
 
 const data = [{
   key: '1',
-  Time: 'John Brown',
-  Place: 32,
-  sence: 'New York No. 1 Lake Park',
-  level: 'New York No. 1 Lake Park',
-  Feeling: "test",
-  solve: "test",
-  effective: "test",
-  nextTry: "test"
+  Time: '2017-08-04',
+  name: "戒烟第一天",
+  Feeling: "兴奋",
+  event: "开启戒烟旅程",
 }, {
   key: '2',
-  Time: 'Jim Green',
-  Place: 42,
-  sence: 'London No. 1 Lake Park',
-  level: 'London No. 1 Lake Park',
-  Feeling: "test",
-  solve: "test",
-  effective: "test",
-  nextTry: "test"
-}, {
-  key: '3',
-  Time: 'Joe Black',
-  Place: 32,
-  sence: 'Sidney No. 1 Lake Park',
-  level: 'Sidney No. 1 Lake Park',
-  Feeling: "test",
-  solve: "test",
-  effective: "test",
-  nextTry: "test"
+  Time: '2017-08-05',
+  name: "戒烟第二天",
+  Feeling: "煎熬",
+  event: "开始计划中的戒烟方法",
 }]; 
 
 class Diary extends Component {
   constructor(props, context) {
     super(props)
     this.state = {
-      currentDiary: "2017-04-19",
+      currentDiary: "2017-08-04",
       diaryList: [{
-        label: "2017-04-01",
-        value: "2017-04-01",
+        label: "2017-08-04",
+        value: "2017-08-04",
       },{
-        label: "2017-04-02",
-        value: "2017-04-02",
-      },{
-        label: "2017-04-03",
-        value: "2017-04-03",
+        label: "2017-08-05",
+        value: "2017-08-05",
       }]
     }
   }

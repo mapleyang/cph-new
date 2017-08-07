@@ -40,6 +40,8 @@ import Compete from "./containers/knowledge/compete"
 import Disease from "./containers/knowledge/disease"
 import Harm from "./containers/more/harm"
 import TwiceHarm from "./containers/more/twiceharm"
+import World from "./containers/activities/world"
+import Picture from "./containers/activities/picture"
 //mobile
 // import MHome from "./containers/MHome/index"  
 // import MTab from "./containers/MHome/tab" 
@@ -93,6 +95,10 @@ const ready = () => {
             <Route path="/en/register" component={Register}></Route>
             <Route path="/calendar" component={Calendar}></Route>
             <Route path="/en/calendar" component={Calendar}></Route>
+            <Route path="/world" component={World}></Route>
+            <Route path="/en/world" component={World}></Route>
+            <Route path="/picture" component={Picture}></Route>
+            <Route path="/en/picture" component={Picture}></Route>
             <Route path="/diary" component={Diary}></Route>
             <Route path="/en/diary" component={Diary}></Route>
             <Route path="/myplan" component={MyPlan}></Route>

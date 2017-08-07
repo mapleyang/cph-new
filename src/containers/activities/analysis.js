@@ -27,20 +27,20 @@ class Analysis extends Component {
       questionsTemp: [],
       series: [{
         name: '良好',
-        data: [0, 0, 0, 0, 0, 0, 0]
+        data: [0.2 , 1, 0, 2, 0, 0]
       }, {
           name: '轻度',
-          data: [0, 0, 0, 0, 0, 0, 0]
+          data: [0, 0, 0, 0, 1.75, 0]
       }, {
           name: '重度',
-          data: [0, 0, 0, 0, 0, 0, 0]
+          data: [0, 0, 0.75, 0, 0, 1.75]
       }],
       userValue: ""
     }
   }
 
   componentDidMount () {
-    this.drawChart();
+    // this.drawChart();
   }
 
   drawChart () {
@@ -52,7 +52,7 @@ class Analysis extends Component {
         text: '问卷健康分析&方案'
     },
     xAxis: {
-        categories: ['吸烟史', '烟草使用', '家人和环境', '2手烟暴露', '健康状况', '肺癌风险', '慢性疾病']
+        categories: ['烟草使用', '家人吸烟', '2手烟暴露', '健康状况', '肺癌风险', '慢性疾病']
     },
     yAxis: {
         min: 0,
@@ -258,7 +258,7 @@ class Analysis extends Component {
     })
     if(item.length !== 0) {
       let finishCard = <TabPane tab="" key={item.length + 1}>
-        <Card title="恭喜你完成了你的健康分析，请查看右边你的健康图" style={{ width: 550 }}>
+        <Card title="恭喜你完成了你的健康分析，请查看右边推荐方案" style={{ width: 550 }}>
         </Card>
       </TabPane>
       item.push(finishCard)
@@ -333,10 +333,10 @@ class Analysis extends Component {
         }
       })
     }
-    let radioItem = <RadioGroup value={radioValue} onChange={this.onPlanChange}>
-      {array.length !== 0 ? array : ''}
-      <Radio value="0">自定义方案</Radio>
-    </RadioGroup>
+    let radioItem = <div>
+      <div className="analysis-plan-title">戒烟方案推荐</div>
+      {array}
+    </div>
     return radioItem;
   }
 
@@ -348,9 +348,7 @@ class Analysis extends Component {
         return <p>{sel}</p>
       })}
     </div>
-    let ele = <Radio value={defaultZH_EN["analysis.plan"][index].value}>
-        <Popover content={content} title={defaultZH_EN["analysis.plan"][index].name} trigger="hover">{defaultZH_EN["analysis.plan"][index].name + "（推荐）"}</Popover>
-      </Radio> 
+    let ele = <div className="analysis-plan-content">{content}</div>
     array.push(ele);
     return array;
   }
@@ -362,10 +360,10 @@ class Analysis extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="analysis">
+        <div className="analysis-form-name">戒烟问卷可以评估你的吸烟和相关健康状况，智能地给出定制化戒烟方案</div>
         <Row>
           <Col span={14}>
             <Form onSubmit={this.handleSubmit}>
-              <div className="analysis-form-name">戒烟问卷可以评估你的吸烟和相关健康状况，智能地给出个体化戒烟方案</div>
               <Row>
                 <Col span={4} className="analysis-left-arrow">
                   <div className="analysis-left-area" onClick={this.leftClick.bind(this)}>
@@ -386,14 +384,11 @@ class Analysis extends Component {
             </Form>
           </Col>
           <Col span={10}>
-            <div className="analysis-name"></div>
             <div className="analysis-chartarea" id="analysis"></div>
             <div className="analysis-project">
-              <div className="analysis-project-items">
-                {this.getPlanItem()}
-              </div>
+              <div className="analysis-plan-title">制定个人戒烟计划</div>
               <div className="analysis-project-create">
-                <Button type="primary" ghost onClick={this.createPlanClick.bind(this)}>创建无烟世界计划>></Button>
+                <Button type="primary" onClick={this.createPlanClick.bind(this)}>创建戒烟计划>></Button>
               </div>
             </div>
           </Col>
@@ -405,3 +400,8 @@ class Analysis extends Component {
 
 export default Analysis = Form.create({
 })(Analysis);
+            // <div className="analysis-chartarea" id="analysis"></div>
+
+            //  <div className="analysis-name">
+            //     {this.getPlanItem()}
+            // </div>

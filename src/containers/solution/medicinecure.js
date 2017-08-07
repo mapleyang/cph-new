@@ -225,7 +225,7 @@ class MedicineCure extends Component {
               </Col>
               <Col span={10}>
                 <div className="cure-main-desc">
-                  <div className="cure-main-name">药物戒烟</div>
+                  <div className="cure-main-name">非处方药物戒烟</div>
                   <div className="cure-main-content medicine-main-content">通过药物的方式帮您戒掉多年的习惯。</div>
                   {this.getDescript()}
                   {this.getPriceItem()}

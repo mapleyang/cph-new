@@ -72,10 +72,9 @@ class Home extends Component {
                 <div className="entry-content-title" onClick={this.linkClick.bind(this, "myplan")}>戒烟计划</div>
               </Col>
               <Col span={6}>
-                <div className="entry-content-title" onClick={this.linkClick.bind(this, "mark")}>戒烟打卡</div>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "diary")}>戒烟日记</div>
               </Col>
               <Col span={6}>
-                <div className="entry-content-title" onClick={this.linkClick.bind(this, "diary")}>戒烟日记</div>
               </Col>
             </Row>
           </Col>
@@ -225,7 +224,7 @@ class Home extends Component {
             </Row>
           </div>
         </div>
-        <div className="home-main-area" style={{background: "url(./home.png)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
+        <div className="home-main-area" style={{background: "url(./home.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
         </div>
         <div className="home-main-data" style={{background: "url(./home1.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
           <div className="home-main-data-desc">

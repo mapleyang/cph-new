@@ -7,69 +7,69 @@ const createPlan = {
         title: "情绪诱因",
         options: [{
           label: "压力大时",
-          value: "stressed"
+          value: "压力大时"
         },{
           label: "焦虑时",
-          value: "anxious"
+          value: "焦虑时"
         },{
           label: "情绪低落时",
-          value: "down"
+          value: "情绪低落时"
         },{
           label: "孤单时",
-          value: "lonely"
+          value: "孤单时"
         },{
           label: "无聊时",
-          value: "boring"
+          value: "无聊时"
         },{
           label: "吵架后",
-          value: "fight"
+          value: "吵架后"
         }]
       },
       habitual: {
         title: "习惯诱因",
         options: [{
           label: "早晨起床后",
-          value: "up"
+          value: "早晨起床后"
         },{
           label: "吃完饭",
-          value: "meal"
+          value: "吃完饭"
         },{
           label: "工作间休",
-          value: "workBreak"
+          value: "工作间休"
         },{
           label: "看电视时",
-          value: "tv"
+          value: "看电视时"
         },{
           label: "饮酒时",
-          value: "alcohol"
+          value: "饮酒时"
         },{
           label: "饮咖啡时",
-          value: "coffee"
+          value: "饮咖啡时"
         },{
           label: "做爱后",
-          value: "sex"
+          value: "做爱后"
         },{
           label: "通话时",
-          value: "phone"
+          value: "通话时"
         }]
       },
       social: {
         title: "社交诱因",
         options: [{
           label: "聚餐",
-          value: "dinner"
+          value: "聚餐"
         },{
           label: "聚会",
-          value: "party"
+          value: "聚会"
         },{
           label: "节假日",
-          value: "festival"
+          value: "节假日"
         },{
           label: "看到他人吸烟",
-          value: "someone"
+          value: "看到他人吸烟"
         },{
           label: "上酒吧",
-          value: "bar"
+          value: "上酒吧"
         }]
       }
     }

@@ -5,6 +5,7 @@ import './index.scss'
 import Footer from '../footer/index';
 import HighchartsMore from 'highcharts-more'
 import Tasks from './tasks';
+import moment from 'moment';
 const FormItem = Form.Item;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
@@ -56,28 +57,62 @@ class MyPlan extends Component {
 
   getPlan () {
     let array = [];
-    if(array.length === 0) {
-      Modal.info({
-        title: '你还有没有创建计划！！！请前往创建',
-        content: "",
-        okText: "前往",
-        onOk() {
-          location.hash = "/analysis";
-        },
-      });
-    }
+    // if(array.length === 0) {
+    //   Modal.info({
+    //     title: '你还有没有创建计划！！！请前往创建',
+    //     content: "",
+    //     okText: "前往",
+    //     onOk() {
+    //       location.hash = "/analysis";
+    //     },
+    //   });
+    // }
   }
 
   getBasicItem () {
     let item;
-    let array = [];
-    if(array.length === 0) {
+    let ele = [];
+    let plan = JSON.parse(sessionStorage.getItem("plan"));
+    if(!plan) {
       item = <div className="myplan-item-none">还没有创建戒烟任务</div>
     }
     else {
-      item = array.map(el => {
-        return <li><span className="myplan-basic-li">●</span><span>{el.label}</span></li>
-      })
+      for(let key in plan) {
+        let li = "";
+        let sence = [];
+        if(plan[key]) {
+          switch(key) {
+            case "quitReason":
+                li = <li><span className="myplan-basic-li">●</span><span>{"我为" + plan[key].toString() + "戒烟"}</span></li>
+              break;
+            case "styles":
+                li = <li><span className="myplan-basic-li">●</span><span>{"我使用" + plan[key].toString() + "戒烟方式"}</span></li>
+              break;
+            case "startTime":
+                let date = new Date(plan[key]);
+                let dateString = date.getFullYear() + "年" + date.getMonth() + "月" + date.getDate() + "日";
+                li = <li><span className="myplan-basic-li">●</span><span>{"我准备好在" + dateString + "开启我的戒烟计划"}</span></li>
+              break;
+            case "smokingEmotion":
+                if(plan[key].length !== 0) {
+                    li = <li><span className="myplan-basic-li">●</span><span>{"我吸烟的情绪诱因为：" + plan[key].toString()}</span></li>
+                }
+              break;
+            case "smokingGam":
+                if(plan[key].length !== 0) {
+                  li = <li><span className="myplan-basic-li">●</span><span>{"我吸烟的习惯诱因为：" + plan[key].toString()}</span></li>
+                }
+              break;  
+            case "smokingHabit":
+                if(plan[key].length !== 0) {
+                    li = <li><span className="myplan-basic-li">●</span><span>{"我吸烟的社交诱因为：" + plan[key].toString()}</span></li>
+                }
+              break;    
+          }
+          ele.push(li)
+        }
+      }
+      item = <div className="li-item">{ele}</div>
     }
     return item;
   }
@@ -95,9 +130,10 @@ class MyPlan extends Component {
   }
 
   tasksEdit () {
-    this.setState({
-      visible: true
-    })
+    // this.setState({
+    //   visible: true
+    // })
+    location.hash = "/plan"
   }
 
   quitStyle () {
@@ -156,20 +192,12 @@ class MyPlan extends Component {
         <div className="myplan-list">
           <div className="myplan-item myplan-basic">
             <div className="myplan-name myplan-name-basic" onClick={this.tasksEdit.bind(this)}>
-              <span>基础任务</span><Icon type="edit" />
+              <span>戒烟计划</span><Icon type="edit" />
             </div>
             <div className="myplan-item-basic">
               <ul>
                 {this.getBasicItem()}
               </ul>
-            </div>
-          </div>
-          <div className="myplan-item myplan-medicine">
-            <div className="myplan-name myplan-name-medicine">
-              <span>戒烟方法</span><Icon type="edit" />
-            </div>
-            <div className="myplan-item-medicine myplan-item-area">
-              {this.quitStyle()}
             </div>
           </div>
           <div className="myplan-item myplan-commonweal">
@@ -202,3 +230,12 @@ class MyPlan extends Component {
 
 export default MyPlan = Form.create({
 })(MyPlan);
+
+// <div className="myplan-item myplan-medicine">
+//             <div className="myplan-name myplan-name-medicine">
+//               <span>戒烟方法</span><Icon type="edit" />
+//             </div>
+//             <div className="myplan-item-medicine myplan-item-area">
+//               {this.quitStyle()}
+//             </div>
+//           </div>

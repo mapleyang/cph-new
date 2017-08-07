@@ -1,13 +1,31 @@
 .analysis {
   background: #f2f6f9;
+  .analysis-name {
+    background: #fff;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 300px;
+    .analysis-plan-content {
+      width: 90%;
+      margin: 0 auto;
+      line-height: 30px;
+      margin-top: 20px;
+    }
+  }
+  .analysis-plan-title {
+    padding-left: 20px;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px #eee solid;
+  }
 	.analysis-form-name {
 		text-align: center;
-    padding-top: 3px;
     color: #333333;
     fill: #333333;
-    background-color: #FFF2E8;
     height: 40px;
     line-height: 40px;
+    border-bottom: 1px #eee solid;  
 	}
 	form {
 		height: 560px;
@@ -20,9 +38,12 @@
     left: 5%;
     border-radius: 5px;
     background: #eee;
-    margin-top: 40px;
+    margin-top: 20px;
     .highcharts-container {
       border-radius: 5px;
+    }
+    .highcharts-legend {
+      display: none;
     }
 	}
 	.analysis-project {
@@ -31,7 +52,6 @@
     position: relative;
     left: 5%;
     border-radius: 5px;
-    text-align: center;
     margin-top: 20px;
     background: #fff;
     .analysis-project-items {
@@ -43,8 +63,11 @@
     }
     .analysis-project-create {
       height: 100px;
+      text-align: center;
       button {
-        margin-top: 60px;
+        margin-top: 40px;
+        background: #0c5b79;
+        border-color: #0c5b79;
       }
     }
 	}
@@ -236,6 +259,12 @@
           color: #fff;
           font-size: 16px;
         }
+        .plan-step-7-operate {
+          width: 80%;
+          margin: 0 auto;
+          padding-bottom: 30px;
+          padding-top: 10px;
+        }
         .plan-step-share {
           width: 40%;
           margin: 0 auto;
@@ -252,6 +281,66 @@
           font-size: 24px;
           text-align: center;
           height: 60px;
+        }
+      }
+      .plan-step-9 {
+        background: #CB2D55;
+        .plan-step-9-name {
+          height: 60px;
+          line-height: 60px;
+          color: #fff;
+          font-size: 24px;
+          text-align: center;
+        }
+        .plan-step-9-desc {
+          width: 80%;
+          margin: 0 auto;
+          color: #fff;
+          font-size: 16px;
+        }
+        .plan-step-9-operate {
+          width: 80%;
+          margin: 0 auto;
+          padding-bottom: 30px;
+          padding-top: 10px;
+          .rid-smoking-content {
+            font-size: 16px;
+            .rid-area {
+              text-align: center;
+            }
+          }
+          .rid-checkbox {
+            font-size: 16px;
+          }
+        }
+      }
+      .plan-step-10 {
+        background: #1C589D;
+        .plan-step-10-name {
+          height: 60px;
+          line-height: 60px;
+          color: #fff;
+          font-size: 24px;
+          text-align: center;
+        }
+        .plan-step-10-desc {
+          width: 80%;
+          margin: 0 auto;
+          color: #fff;
+          font-size: 16px;
+          text-align: center;
+        }
+        .plan-step-10-operate {
+          width: 80%;
+          margin: 0 auto;
+          padding-bottom: 30px;
+          padding-top: 10px;
+          .contact-checkbox {
+            font-size: 16px;
+          }
+          .quitContact-title {
+              font-size: 16px;
+          }
         }
       }
       .plan-step-8 {
@@ -339,5 +428,83 @@
     margin: 0 auto; 
     cursor: pointer;
     font-size: 20px;
+  }
+}
+.world {
+   .world-module {
+     padding-top: 20px;
+      width: 80%;
+      margin: 0 auto;
+      .world-module-item {
+        height: 120px;
+        text-align: center;
+        line-height: 120px;
+        width: 90%;
+        margin: 0 auto;
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      .module-help {
+        background: #357166;
+      }
+      .module-child {
+        background: #CB2D55;
+      }
+      .module-commware {
+        background: #62737E;
+      }
+      .module-company {
+        background: #2F4F77;
+      }
+      .module-selected {
+        box-shadow: 10px 10px 5px #888888;
+      }
+   }
+   .module-content {
+      margin-top: 40px;
+      .module-area {
+        width: 78%;
+        margin: 0 auto;
+        background: #E5A755;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+      .module-label {
+        font-size: 16px;
+        padding: 30px;
+        a {
+          padding-left: 20px;
+          color: #fff;
+          text-decoration: underline;
+        }
+        .module-sub-label {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+   }
+}
+.picture {
+  .self-area {
+    height: 60px;
+    border-bottom: 1px #eee solid;
+    text-align: right;
+    line-height: 60px;
+    button {
+      margin-right: 30px;
+    }
+  }
+  .picture-list {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    .card-zan {
+      cursor: pointer;
+    }
+    img {
+      width: 100%;
+      height: 300px;
+    }
   }
 }

@@ -82,6 +82,9 @@
 			width: 100%;
 			text-align: center;
 			color: #fff;
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px #eee solid;
 		}
 	}
 	.result-content {
@@ -92,6 +95,11 @@
 	}
 }
 .myplan {
+  background: #f2f6f9;
+  .li-item {
+    margin: 20px;
+    line-height: 40px;
+  }
   .plan-title {
     height: 150px;
     text-align: center; 
