@@ -77,8 +77,8 @@ class Picture extends Component {
         <div className="picture-list">
           <Row>
             <Col span={6}>
-              <Card title="与公益同行" extra={<span className="card-zan" onClick={this.zanClick.bind(this)}><Icon type="like-o" />{this.state.num}人赞</span>} style={{ width: 300 }}>
-                <img src="./child.jpg" />
+              <Card title="3个月的戒烟历程" extra={<span className="card-zan" onClick={this.zanClick.bind(this)}><Icon type="like-o" />{this.state.num}人赞</span>} style={{ width: 300 }}>
+                <img src="./share1.jpg" />
               </Card>
             </Col>
             <Col span={6}></Col>

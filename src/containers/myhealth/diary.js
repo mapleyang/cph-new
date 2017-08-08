@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Popover, Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select ,Card ,Tabs, Modal  } from 'antd'
+import { Table, Popover, Upload, Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select ,Card ,Tabs, Modal  } from 'antd'
 import './index.scss'
 import Footer from '../footer/index';
 import language from "../../utils/param";
@@ -61,6 +61,7 @@ class Diary extends Component {
   constructor(props, context) {
     super(props)
     this.state = {
+      upVisible: false,
       currentDiary: "2017-08-04",
       diaryList: [{
         label: "2017-08-04",
@@ -70,6 +71,25 @@ class Diary extends Component {
         value: "2017-08-05",
       }]
     }
+  }
+
+  uploadClick () {
+    this.setState({
+      upVisible: true
+    })
+  }
+
+  handleOk = (e) => {
+    console.log(e);
+    this.setState({
+      upVisible: false,
+    });
+  }
+  handleCancel = (e) => {
+    console.log(e);
+    this.setState({
+      upVisible: false,
+    });
   }
 
   diaryItemClick (value) {
@@ -106,11 +126,69 @@ class Diary extends Component {
             <Col span={18}>
               <div className="record-table">
                 <Table columns={columns} dataSource={data} pagination={false} />
-                <Button className="record-secen-add">新增</Button>
+                <Button className="record-secen-add" onClick={this.uploadClick.bind(this)}>新增</Button>
               </div>
             </Col>
           </Row>
         </div>
+        <Modal
+          title="上传作品"
+          visible={this.state.upVisible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+        >
+        <Form onSubmit={this.handleSubmit}>
+           <FormItem {...formItemLayout} label="日记名称">
+            {getFieldDecorator('childName', {
+                rules: [{
+                  required: true,
+                  message: '请输入日记名称',
+                }],
+              })(
+                <Input placeholder="请输入日记名称" />
+              )}
+            </FormItem>
+             <FormItem {...formItemLayout} label="心情">
+            {getFieldDecorator('school', {
+                rules: [{
+                  required: true,
+                  message: '请描述您的心情',
+                }],
+              })(
+                <Input placeholder="请描述您的心情" />
+              )}
+            </FormItem>
+          <FormItem {...formItemLayout} label="戒烟事件">
+            {getFieldDecorator('name', {
+                rules: [{
+                  required: true,
+                  message: '请描述发生的事件',
+                }],
+              })(
+                <Input placeholder="请描述发生的事件" />
+              )}
+            </FormItem>
+          <FormItem
+            {...formItemLayout}
+            label="日记上传"
+          >
+            <div className="dropbox">
+              {getFieldDecorator('dragger', {
+                valuePropName: 'fileList',
+                getValueFromEvent: this.normFile,
+              })(
+                <Upload.Dragger name="files" action="/upload.do">
+                  <p className="ant-upload-drag-icon">
+                    <Icon type="inbox" />
+                  </p>
+                  <p className="ant-upload-text">点击或拖拽文件到这个区域进行上传</p>
+                </Upload.Dragger>
+              )}
+            </div>
+          </FormItem>
+
+          </Form>
+        </Modal>
       </div>
     );
   }

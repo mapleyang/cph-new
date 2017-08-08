@@ -240,6 +240,7 @@
             .ant-checkbox-group-item {
               display: -webkit-box;
               margin-top: 10px;
+              color: #fff;
             }
           }
         }
@@ -284,7 +285,8 @@
         }
       }
       .plan-step-9 {
-        background: #CB2D55;
+        color: #fff;
+        background: #6EBBD9;
         .plan-step-9-name {
           height: 60px;
           line-height: 60px;
@@ -315,7 +317,8 @@
         }
       }
       .plan-step-10 {
-        background: #1C589D;
+        color: #fff;
+        background: #669966;
         .plan-step-10-name {
           height: 60px;
           line-height: 60px;
@@ -355,6 +358,11 @@
       }
       .plan-step-daily {
         background: #A8D4CC;
+        .plan-table {
+          width: 90%;
+          position: relative;
+          left: 5%;
+        }
         .plan-step-daily-name {
           height: 50px;
           line-height: 50px;
@@ -385,6 +393,13 @@
           text-align: center;
           height: 60px;
         }
+        th {
+          background: #a8d4cc;
+        }
+        table {
+          font-size: 16px;
+          color: #fff;
+        }
       }
       .plan-step-styles {
         background: #357166;
@@ -405,6 +420,7 @@
               font-size: 20px;
               color: #fff;
               margin-right: 30px;
+              color: #fff;
             }
           }
         }
@@ -551,6 +567,9 @@
     img {
       width: 100%;
       height: 300px;
+    }
+    .card-area {
+      margin-right: 40px;
     }
   }
   .word-form {

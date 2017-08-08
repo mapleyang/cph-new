@@ -108,6 +108,10 @@ class MyPlan extends Component {
                     li = <li><span className="myplan-basic-li">●</span><span>{"我吸烟的社交诱因为：" + plan[key].toString()}</span></li>
                 }
               break;    
+            case "ridWay":
+                if(plan[key].length !== 0) {
+                }
+              break;   
           }
           ele.push(li)
         }

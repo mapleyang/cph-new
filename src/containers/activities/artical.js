@@ -78,7 +78,7 @@ class Artical extends Component {
           <Row>
             <Col span={6}>
               <Card title="论二手烟的危害性" extra={<span className="card-zan" onClick={this.zanClick.bind(this)}><Icon type="like-o" />{this.state.num}人赞</span>} style={{ width: 300 }}>
-                <img src="./child.jpg" />
+                <img src="./at1.jpg" />
               </Card>
             </Col>
             <Col span={6}></Col>

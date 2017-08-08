@@ -232,7 +232,6 @@ class Analysis extends Component {
       series: series
     })
     this.drawChart()
-    console.log(series)
   }
 
   getQuestions (value) {

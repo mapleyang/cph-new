@@ -182,7 +182,7 @@ class Home extends Component {
       <div className="home">
         <div className="activity-tip">
           <Carousel vertical autoplay dots={false}>
-          <div className="activity-tip-item" onClick={this.activityTipClick.bind(this, "child")}>2017-08-08 将在上海举行家庭无烟活动，>>>请点击报名。</div>
+          <div className="activity-tip-item" onClick={this.activityTipClick.bind(this, "world")}>2017-08-08 将在上海举行家庭无烟活动，>>>请点击报名。</div>
           <div className="activity-tip-item" onClick={this.activityTipClick.bind(this, "coach")}>2017-09-01 将在上海征集戒烟教练，>>>请点击报名。</div>
         </Carousel>
         </div>

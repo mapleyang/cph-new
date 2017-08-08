@@ -19,7 +19,8 @@ class Picture extends Component {
     super(props)
     this.state = {
       upVisible: false,
-      num: 5
+      num: 5,
+      num2: 10
     }
   }
 
@@ -51,10 +52,16 @@ class Picture extends Component {
   }
 
   zanClick () {
-    debugger
     let num = this.state.num + 1;
     this.setState({
       num: num
+    })
+  }
+
+  zan2Click () {
+    let num2 = this.state.num2 + 1;
+    this.setState({
+      num2: num2
     })
   }
 
@@ -76,14 +83,18 @@ class Picture extends Component {
         </div> 
         <div className="picture-list">
           <Row>
-            <Col span={6}>
+            <Col span={6} className="card-area">
               <Card title="与公益同行" extra={<span className="card-zan" onClick={this.zanClick.bind(this)}><Icon type="like-o" />{this.state.num}人赞</span>} style={{ width: 300 }}>
                 <img src="./child.jpg" />
               </Card>
             </Col>
-            <Col span={6}></Col>
-            <Col span={6}></Col>
-            <Col span={6}></Col>
+            <Col span={6} className="card-area">
+              <Card title="画画作品" extra={<span className="card-zan" onClick={this.zan2Click.bind(this)}><Icon type="like-o" />{this.state.num2}人赞</span>} style={{ width: 300 }}>
+                <img src="./pc2.jpg" />
+              </Card>
+            </Col>
+            <Col span={6} className="card-area"></Col>
+            <Col span={6} className="card-area"></Col>
           </Row>
         </div> 
         <Modal

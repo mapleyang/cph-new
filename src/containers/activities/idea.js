@@ -77,8 +77,8 @@ class Idea extends Component {
         <div className="picture-list">
           <Row>
             <Col span={6}>
-              <Card title="论二手烟的危害性" extra={<span className="card-zan" onClick={this.zanClick.bind(this)}><Icon type="like-o" />{this.state.num}人赞</span>} style={{ width: 300 }}>
-                <img src="./child.jpg" />
+              <Card title="替代法" extra={<span className="card-zan" onClick={this.zanClick.bind(this)}><Icon type="like-o" />{this.state.num}人赞</span>} style={{ width: 300 }}>
+                <img src="./idea1.jpg" />
               </Card>
             </Col>
             <Col span={6}></Col>

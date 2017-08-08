@@ -39,7 +39,31 @@ class Plan extends Component {
       quitValue: [],
       quitContact: [0],
       dailyTask: [0],
-      ridWay: []
+      ridWay: [{
+        value: "1",
+        flag: false,
+        content: "扔掉所有香烟"
+      },{
+        value: "2",
+        flag: false,
+        content: "扔掉所有打火机,火柴，烟灰缸"
+      },{
+        value: "4",
+        flag: false,
+        content: "打扫和通风"
+      },{
+        value: "5",
+        flag: false,
+        content: "贴戒烟标语"
+      },{
+        value: "6",
+        flag: false,
+        content: "放置戒烟物品"
+      },{
+        value: "7",
+        flag: false,
+        content: "对抗烟瘾要做的事情"
+      }]
     }
   }
 
@@ -85,15 +109,10 @@ class Plan extends Component {
             plan[el] = values[el];
           }
         }
+        plan.ridWay = this.state.ridWay;
         sessionStorage.removeItem("plan")
         sessionStorage.setItem("plan", JSON.stringify(plan));
         location.hash = "/myplan";
-        // fetch("/readPlan?plan=" + plan)
-        // .then(response => response.json())
-        // .then(json => { 
-        //   if(json.success) {
-        //   }
-        // })
       }
     });
   }
@@ -221,7 +240,7 @@ class Plan extends Component {
       name: "quitWay",
       element: <FormItem>
         <div className="plan-steps-item plan-step-7">
-          <div className="plan-step-7-name">克服烟瘾方法/Prepare to fight carving</div>
+          <div className="plan-step-7-name">克服烟瘾方法</div>
           <div className="plan-step-7-desc">Cravings only last a few minutes--but those minutes can be hard. Select the types of cravings you usually have. The tips for beating these cravings will be added to your quit plan.</div>
           <div className="plan-step-7-operate">{this.getQuitWay()}</div>
         </div>
@@ -230,7 +249,7 @@ class Plan extends Component {
       name: "ridSmoking",
       element: <FormItem>
         <div className="plan-steps-item plan-step-9">
-          <div className="plan-step-9-name">清除吸烟相关物/Get rid of smoking reminders</div>
+          <div className="plan-step-9-name">清除吸烟相关物</div>
           <div className="plan-step-9-desc">Seeing reminders of smoking makes it harder to stay smokefree. Get rid of any reminders in your home, car, and workplace before your quit day. Below is a list of common smoking reminders and how to deal with them. This list will be added to your quit plan.</div>
           <div className="plan-step-9-operate">{this.ridSmoking()}</div>
         </div>
@@ -239,7 +258,7 @@ class Plan extends Component {
       name: "quitContact",
       element: <FormItem>
         <div className="plan-steps-item plan-step-10">
-          <div className="plan-step-10-name">建立你的支持/Identify your supports</div>
+          <div className="plan-step-10-name">建立你的支持</div>
           <div className="plan-step-10-desc">获得周围人的支持能够帮助你更好地戒烟。</div>
           <div className="plan-step-10-operate">
             <div>
@@ -261,7 +280,7 @@ class Plan extends Component {
       name: "dailyTask",
       element: <FormItem>
         <div className="plan-steps-item plan-step-daily">
-          <div className="plan-step-daily-name">你的奖励计划/Your incentive plan</div>
+          <div className="plan-step-daily-name">你的奖励计划</div>
           <div className="plan-step-daily-operate">
             {this.getTaskTable()}
           </div>
@@ -319,22 +338,26 @@ class Plan extends Component {
   ridSmoking () {
     let item = "";
     let array = [{
-      content: "扔掉所有香烟/Get rid of all cigarettes"
+      value: "1",
+      content: "扔掉所有香烟"
     },{
-      content: "扔掉所有打火机,火柴，烟灰缸/ Lighters，matches，Ashtrays "
+      value: "2",
+      content: "扔掉所有打火机,火柴，烟灰缸"
     },{
-      content: "扔掉所有打火机,火柴，烟灰缸/ Lighters，matches，Ashtrays "
+      value: "4",
+      content: "打扫和通风"
     },{
-      content: "打扫和通风/Cleaning and ventilation"
+      value: "5",
+      content: "贴戒烟标语"
     },{
-      content: "贴戒烟标语/No smoking/Quit sign"
+      value: "6",
+      content: "放置戒烟物品"
     },{
-      content: "放置戒烟物品/Craving fighting items"
-    },{
-      content: "对抗烟瘾要做的事情/Craving fighting chore list"
+      value: "7",
+      content: "对抗烟瘾要做的事情"
     }]
     let checkboxItem = array.map((el, index) => {
-      return <div><Checkbox onChange={this.ridWaysClick.bind(this, index)}><span className="rid-checkbox">{el.content}</span></Checkbox></div>
+      return <div><Checkbox onChange={this.ridWaysClick.bind(this, el)}><span className="rid-checkbox">{el.content}</span></Checkbox></div>
     })
     item = <div className="rid-smoking-content">
       <Row>
@@ -351,8 +374,28 @@ class Plan extends Component {
     return item;
   }
 
-  ridWaysClick (index, e) {
+  ridWaysClick (value, e) {
     let ridWay = this.state.ridWay;
+    let temp = [];
+    if(e.target.checked) {
+      temp = ridWay.map(el => {
+        if(el.value === el.value) {
+          el.flag = true;
+        }
+        return el
+      })
+    }
+    else {
+      temp = ridWay.map(el => {
+        if(el.value === el.value) {
+          el.flag = false;
+        }
+        return el
+      })
+    }
+    this.setState({
+      ridWay: temp
+    })
   }
 
   getContact () {
@@ -383,28 +426,32 @@ class Plan extends Component {
       content: "3月"
     },{
       num: "6",
-      content: "6月"
+      content: "6月  "
     }]
     let columns = [{
       title: '序号',
       dataIndex: 'num',
       key: 'num',
     },{
-      title: "戒烟里程碑/Quitting Milestone",
+      title: "戒烟里程碑",
       dataIndex: "content",
       key: "content"
     },{
-      title: "奖励/Incentive",
+      title: "奖励",
       dataIndex: "incentive",
       key: "incentive",
       render: (text, record) => (
         <span>
-          <Input placeholder="请输入您的奖励"/>
+          <Input placeholder="请输入您的奖励" onChange={this.wardChange.bind(this, record)}/>
         </span>
       ),
     }]
-    item = <Table columns={columns} dataSource={array} pagination={false}/>
+    item = <Table className="plan-table" columns={columns} dataSource={array} pagination={false}/>
     return item;
+  }
+
+  wardChange (record, e) {
+
   }
 
   stylesChange () {
