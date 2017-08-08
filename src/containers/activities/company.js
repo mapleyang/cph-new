@@ -14,7 +14,20 @@ const formItemLayout = {
   wrapperCol: { span: 14 },
 };
 
-class Picture extends Component {
+const tailFormItemLayout = {
+  wrapperCol: {
+    xs: {
+      span: 24,
+      offset: 0,
+    },
+    sm: {
+      span: 14,
+      offset: 6,
+    },
+  },
+};
+
+class Company extends Component {
   constructor(props, context) {
     super(props)
     this.state = {
@@ -66,66 +79,53 @@ class Picture extends Component {
           <Row>
             <Col span={12}>
               <div className="world-commom-title">
-                <span><Icon type="picture" />涂鸦比赛活动</span>
+                <span>报名和公司一起策划戒烟活动</span>
               </div>
             </Col>
             <Col span={12} className="world-commom-button">
-              <Button type="primary" onClick={this.uploadClick.bind(this)}>上传戒烟作品</Button>
             </Col>
           </Row>
         </div> 
-        <div className="picture-list">
-          <Row>
-            <Col span={6}>
-              <Card title="与公益同行" extra={<span className="card-zan" onClick={this.zanClick.bind(this)}><Icon type="like-o" />{this.state.num}人赞</span>} style={{ width: 300 }}>
-                <img src="./child.jpg" />
-              </Card>
-            </Col>
-            <Col span={6}></Col>
-            <Col span={6}></Col>
-            <Col span={6}></Col>
-          </Row>
-        </div> 
-        <Modal
-          title="上传作品"
-          visible={this.state.upVisible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-        >
-        <Form onSubmit={this.handleSubmit}>
-           <FormItem {...formItemLayout} label="孩子姓名">
-            {getFieldDecorator('childName', {
-                rules: [{
-                  required: true,
-                  message: '请输入孩子姓名',
-                }],
-              })(
-                <Input placeholder="请输入孩子姓名" />
-              )}
+        <div className="word-form">
+          <Form onSubmit={this.handleSubmit}>
+             <FormItem {...formItemLayout} label="姓名">
+              {getFieldDecorator('childName', {
+                  rules: [{
+                    required: true,
+                    message: '请输入您姓名',
+                  }],
+                })(
+                  <Input placeholder="请输入您姓名" />
+                )}
+              </FormItem>
+               <FormItem {...formItemLayout} label="住址">
+              {getFieldDecorator('school', {
+                  rules: [{
+                    required: true,
+                    message: '请输入您的住址',
+                  }],
+                })(
+                  <Input placeholder="请输入您的住址" />
+                )}
+              </FormItem>
+            <FormItem {...formItemLayout} label="手机号">
+              {getFieldDecorator('name', {
+                  rules: [{
+                    required: true,
+                    message: '请输入您的手机号',
+                  }],
+                })(
+                  <Input placeholder="请输入您的手机号" />
+                )}
+              </FormItem>
+            <FormItem
+              {...formItemLayout}
+              label="活动经历">
+                <Input placeholder="请输入简短经历" />
             </FormItem>
-             <FormItem {...formItemLayout} label="学校名称">
-            {getFieldDecorator('school', {
-                rules: [{
-                  required: true,
-                  message: '请输入学校名称',
-                }],
-              })(
-                <Input placeholder="请输入学校名称" />
-              )}
-            </FormItem>
-          <FormItem {...formItemLayout} label="作品名称">
-            {getFieldDecorator('name', {
-                rules: [{
-                  required: true,
-                  message: '请输入作品名称',
-                }],
-              })(
-                <Input placeholder="请输入作品名称" />
-              )}
-            </FormItem>
-          <FormItem
+            <FormItem
             {...formItemLayout}
-            label="文件上传"
+            label="简历上传"
           >
             <div className="dropbox">
               {getFieldDecorator('dragger', {
@@ -141,9 +141,11 @@ class Picture extends Component {
               )}
             </div>
           </FormItem>
-
+            <FormItem {...tailFormItemLayout}>
+              <Button className="world-form-buttom" type="primary" htmlType="submit">参加报名</Button>
+            </FormItem>
           </Form>
-        </Modal>
+        </div>
       </div>
     );
   }
@@ -151,5 +153,5 @@ class Picture extends Component {
 
 
 
-export default Picture = Form.create({
-})(Picture);
+export default Company = Form.create({
+})(Company);

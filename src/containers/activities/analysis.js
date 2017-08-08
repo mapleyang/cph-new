@@ -40,7 +40,7 @@ class Analysis extends Component {
   }
 
   componentDidMount () {
-    // this.drawChart();
+    this.drawChart();
   }
 
   drawChart () {

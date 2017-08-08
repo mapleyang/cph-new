@@ -37,44 +37,169 @@ class World extends Component {
     switch(this.state.moduleFlag) {
       case "child":
         item = <div className="module-label">
-          <div className="module-sub-label">学习戒烟知识／Understanding smoking</div>
-          <div><a onClick={this.linkClick.bind(this, "disease")}><span>●</span><span>烟草和健康/Tobacco and health</span></a></div>
-          <div><a onClick={this.linkClick.bind(this, "truth")}><span>●</span><span>戒烟问题游戏／Quitting quiz game</span></a></div>
-          <div className="module-sub-label">戒烟画图活动/Drawing a picture</div>
-          <div><a onClick={this.linkClick.bind(this, "picture")}><span>●</span><span>参加戒烟涂鸦活动</span></a></div>
-          <div className="module-sub-label">写戒烟文章/Writing an article</div>
-          <div><a><span>●</span><span>与孩子一起写戒烟文章</span></a></div>
-          <div className="module-sub-label">参与戒烟公益活动/Volunteer activity</div>
-          <div><a><span>●</span><span>志愿者招募/Recruiting Volunteers</span></a></div>
-          <div><a><span>●</span><span>新活动项目／New activities</span></a></div>
-          <div><a><span>●</span><span>热门活动/Activities on spotlight</span></a></div>
-          <div><a><span>●</span><span>我要发起活动/Create a new activity</span></a></div>
-          <div><a><span>●</span><span>活动点子/ Volunteer activity ideas</span></a></div>
+          <div className="module-sub-label">学习戒烟知识</div>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "disease")}>
+            <Col span={6} className="world-item-img">
+              <img src="./family.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">烟草和健康</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "truth")}>
+            <Col span={6} className="world-item-img">
+              <img src="./game.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">戒烟问题游戏</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <div className="module-sub-label">戒烟画图活动</div>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "picture")}>
+            <Col span={6} className="world-item-img">
+              <img src="./picture.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">参加戒烟涂鸦活动</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <div className="module-sub-label">写戒烟文章</div>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "artical")}>
+            <Col span={6} className="world-item-img">
+              <img src="./artical.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">与孩子一起写戒烟文章</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <div className="module-sub-label">参与戒烟公益活动</div>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "volunteer")}>
+            <Col span={6} className="world-item-img">
+              <img src="./volunteerm.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">志愿者招募</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "hot")}>
+            <Col span={6} className="world-item-img">
+              <img src="./hot.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">热门戒烟活动</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "public")}>
+            <Col span={6} className="world-item-img">
+              <img src="./public.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">我要发起活动</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "idea")}>
+            <Col span={6} className="world-item-img">
+              <img src="./idea.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">活动点子</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
         </div>
         break;
       case "help":
         item = <div className="module-label">
-          <div>帮助他人戒烟/Helping others quit</div>
-          <div><a><span>●</span><span>分享经验和故事/Sharing tips/stories</span></a></div>
-          <div><a><span>●</span><span>解答戒烟问题/Answering quit smoking questions</span></a></div>
-          <div><a><span>●</span><span>成为戒烟辅导员/Quit smoking counselor</span></a></div>
-          <div><a><span>●</span><span>成为戒烟教练(专业人员)/Quit smoking coach</span></a></div>
+          <div className="module-sub-label">帮助他人戒烟</div>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "share")}>
+            <Col span={6} className="world-item-img">
+              <img src="./share.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">分享经验和故事</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "question")}>
+            <Col span={6} className="world-item-img">
+              <img src="./anwwer.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">解答戒烟问题</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "coach")}>
+            <Col span={6} className="world-item-img">
+              <img src="./coach.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">成为戒烟教练(专业人员)</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
         </div>
         break;
       case "commware":
         item = <div className="module-label">
-          <div className="module-sub-label">参与戒烟公益活动/Volunteer activity</div>
-          <div><a><span>●</span><span>志愿者招募/Recruiting Volunteers</span></a></div>
-          <div><a><span>●</span><span>新活动项目／New activities</span></a></div>
-          <div><a><span>●</span><span>热门活动/Activities on spotlight</span></a></div>
-          <div><a><span>●</span><span>我要发起活动/Create a new activity</span></a></div>
-          <div><a><span>●</span><span>活动点子/ Volunteer activity ideas</span></a></div>
+          <div className="module-sub-label">参与戒烟公益活动</div>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "volunteer")}>
+            <Col span={6} className="world-item-img">
+              <img src="./volunteerm.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">志愿者招募</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "hot")}>
+            <Col span={6} className="world-item-img">
+              <img src="./hot.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">热门戒烟活动</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "public")}>
+            <Col span={6} className="world-item-img">
+              <img src="./public.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">我要发起活动</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "idea")}>
+            <Col span={6} className="world-item-img">
+              <img src="./idea.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">活动点子</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
         </div>
         break;
       case "company":
         item = <div className="module-label">
-          <div className="module-sub-label">公司戒烟策划/Contributing to your company smoking cessation program</div>
-          <div><a><span>●</span><span>报名和公司一起策划戒烟活动</span></a></div>
+          <div className="module-sub-label">公司戒烟策划</div>
+          <Row className="world-item" onClick={this.linkClick.bind(this, "company")}>
+            <Col span={6} className="world-item-img">
+              <img src="./signUp.jpg" /> 
+            </Col>
+            <Col span={18} className="world-item-content">
+              <div className="world-item-content-title">报名和公司一起策划戒烟活动</div>
+              <div className="world-item-content-label"></div>
+            </Col>
+          </Row>
         </div>
         break;
     }

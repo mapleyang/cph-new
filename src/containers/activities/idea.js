@@ -14,7 +14,7 @@ const formItemLayout = {
   wrapperCol: { span: 14 },
 };
 
-class Picture extends Component {
+class Idea extends Component {
   constructor(props, context) {
     super(props)
     this.state = {
@@ -66,18 +66,18 @@ class Picture extends Component {
           <Row>
             <Col span={12}>
               <div className="world-commom-title">
-                <span><Icon type="picture" />涂鸦比赛活动</span>
+                <span>戒烟活动点子收集</span>
               </div>
             </Col>
             <Col span={12} className="world-commom-button">
-              <Button type="primary" onClick={this.uploadClick.bind(this)}>上传戒烟作品</Button>
+              <Button type="primary" onClick={this.uploadClick.bind(this)}>创建我的点子</Button>
             </Col>
           </Row>
         </div> 
         <div className="picture-list">
           <Row>
             <Col span={6}>
-              <Card title="与公益同行" extra={<span className="card-zan" onClick={this.zanClick.bind(this)}><Icon type="like-o" />{this.state.num}人赞</span>} style={{ width: 300 }}>
+              <Card title="论二手烟的危害性" extra={<span className="card-zan" onClick={this.zanClick.bind(this)}><Icon type="like-o" />{this.state.num}人赞</span>} style={{ width: 300 }}>
                 <img src="./child.jpg" />
               </Card>
             </Col>
@@ -87,45 +87,45 @@ class Picture extends Component {
           </Row>
         </div> 
         <Modal
-          title="上传作品"
+          title="上传文章"
           visible={this.state.upVisible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
         <Form onSubmit={this.handleSubmit}>
-           <FormItem {...formItemLayout} label="孩子姓名">
+           <FormItem {...formItemLayout} label="作者名字">
             {getFieldDecorator('childName', {
                 rules: [{
                   required: true,
-                  message: '请输入孩子姓名',
+                  message: '请输入作者名字',
                 }],
               })(
-                <Input placeholder="请输入孩子姓名" />
+                <Input placeholder="请输入作者名字" />
               )}
             </FormItem>
-             <FormItem {...formItemLayout} label="学校名称">
+             <FormItem {...formItemLayout} label="文章名称">
             {getFieldDecorator('school', {
                 rules: [{
                   required: true,
-                  message: '请输入学校名称',
+                  message: '请输入文章名称',
                 }],
               })(
-                <Input placeholder="请输入学校名称" />
+                <Input placeholder="请输入文章名称" />
               )}
             </FormItem>
-          <FormItem {...formItemLayout} label="作品名称">
+          <FormItem {...formItemLayout} label="文章描述">
             {getFieldDecorator('name', {
                 rules: [{
                   required: true,
-                  message: '请输入作品名称',
+                  message: '请输入文章描述',
                 }],
               })(
-                <Input placeholder="请输入作品名称" />
+                <Input placeholder="请输入文章描述" />
               )}
             </FormItem>
           <FormItem
             {...formItemLayout}
-            label="文件上传"
+            label="文章上传"
           >
             <div className="dropbox">
               {getFieldDecorator('dragger', {
@@ -151,5 +151,5 @@ class Picture extends Component {
 
 
 
-export default Picture = Form.create({
-})(Picture);
+export default Idea = Form.create({
+})(Idea);

@@ -42,6 +42,13 @@ import Harm from "./containers/more/harm"
 import TwiceHarm from "./containers/more/twiceharm"
 import World from "./containers/activities/world"
 import Picture from "./containers/activities/picture"
+import Artical from "./containers/activities/artical"
+import Hot from "./containers/activities/hot"
+import Idea from "./containers/activities/idea"
+import Volunteer from "./containers/activities/volunteer"
+import Public from "./containers/activities/public"
+import Question from "./containers/activities/question"
+import Company from "./containers/activities/company"
 //mobile
 // import MHome from "./containers/MHome/index"  
 // import MTab from "./containers/MHome/tab" 
@@ -99,6 +106,20 @@ const ready = () => {
             <Route path="/en/world" component={World}></Route>
             <Route path="/picture" component={Picture}></Route>
             <Route path="/en/picture" component={Picture}></Route>
+            <Route path="/artical" component={Artical}></Route>
+            <Route path="/en/artical" component={Artical}></Route>
+            <Route path="/hot" component={Hot}></Route>
+            <Route path="/en/hot" component={Hot}></Route>
+            <Route path="/idea" component={Idea}></Route>
+            <Route path="/en/idea" component={Idea}></Route>
+            <Route path="/volunteer" component={Volunteer}></Route>
+            <Route path="/en/volunteer" component={Volunteer}></Route>
+            <Route path="/public" component={Public}></Route>
+            <Route path="/en/public" component={Public}></Route>
+            <Route path="/question" component={Question}></Route> 
+            <Route path="/en/question" component={Question}></Route>
+            <Route path="/company" component={Company}></Route> 
+            <Route path="/en/company" component={Company}></Route>
             <Route path="/diary" component={Diary}></Route>
             <Route path="/en/diary" component={Diary}></Route>
             <Route path="/myplan" component={MyPlan}></Route>

@@ -368,22 +368,22 @@ class Plan extends Component {
     let item = "";
     let array = [{
       num: "1",
-      content: "1周/1 week"
+      content: "1周"
     },{
       num: "2",
-      content: "2周/2 weeks"
+      content: "2周"
     },{
       num: "3",
-      content: "1月/1 month"
+      content: "1月"
     },{
       num: "4",
-      content: "1月/1 month"
+      content: "1月"
     },{
       num: "5",
-      content: "3月/3 months"
+      content: "3月"
     },{
       num: "6",
-      content: "6月/6 months"
+      content: "6月"
     }]
     let columns = [{
       title: '序号',

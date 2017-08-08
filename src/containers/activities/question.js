@@ -9,6 +9,7 @@ const Option = Select.Option;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 const TabPane = Tabs.TabPane;
+const { TextArea } = Input;
 const formItemLayout = {
   labelCol: { span: 6 },
   wrapperCol: { span: 14 },
@@ -27,7 +28,7 @@ const tailFormItemLayout = {
   },
 };
 
-class Coach extends Component {
+class Question extends Component {
   constructor(props, context) {
     super(props)
     this.state = {
@@ -79,7 +80,7 @@ class Coach extends Component {
           <Row>
             <Col span={12}>
               <div className="world-commom-title">
-                <span>戒烟教练</span>
+                <span>问题&解答</span>
               </div>
             </Col>
             <Col span={12} className="world-commom-button">
@@ -88,61 +89,28 @@ class Coach extends Component {
         </div> 
         <div className="word-form">
           <Form onSubmit={this.handleSubmit}>
-             <FormItem {...formItemLayout} label="姓名">
+             <FormItem {...formItemLayout} label="问题名称">
               {getFieldDecorator('childName', {
                   rules: [{
                     required: true,
-                    message: '请输入您姓名',
+                    message: '请输入问题名称',
                   }],
                 })(
-                  <Input placeholder="请输入您姓名" />
+                  <Input placeholder="请输入问题名称" />
                 )}
               </FormItem>
-               <FormItem {...formItemLayout} label="住址">
-              {getFieldDecorator('school', {
+              <FormItem {...formItemLayout} label="问题描述">
+              {getFieldDecorator('childName', {
                   rules: [{
                     required: true,
-                    message: '请输入您的住址',
+                    message: '请输入问题描述',
                   }],
                 })(
-                  <Input placeholder="请输入您的住址" />
+                  <textArea style={{width: "100%"}} placeholder="请输入问题描述" />
                 )}
               </FormItem>
-            <FormItem {...formItemLayout} label="手机号">
-              {getFieldDecorator('name', {
-                  rules: [{
-                    required: true,
-                    message: '请输入您的手机号',
-                  }],
-                })(
-                  <Input placeholder="请输入您的手机号" />
-                )}
-              </FormItem>
-            <FormItem
-              {...formItemLayout}
-              label="戒烟经历">
-                <Input placeholder="请输入简短经历" />
-            </FormItem>
-            <FormItem
-            {...formItemLayout}
-            label="简历上传"
-          >
-            <div className="dropbox">
-              {getFieldDecorator('dragger', {
-                valuePropName: 'fileList',
-                getValueFromEvent: this.normFile,
-              })(
-                <Upload.Dragger name="files" action="/upload.do">
-                  <p className="ant-upload-drag-icon">
-                    <Icon type="inbox" />
-                  </p>
-                  <p className="ant-upload-text">点击或拖拽文件到这个区域进行上传</p>
-                </Upload.Dragger>
-              )}
-            </div>
-          </FormItem>
             <FormItem {...tailFormItemLayout}>
-              <Button className="world-form-buttom" type="primary" htmlType="submit">报名</Button>
+              <Button className="world-form-buttom" type="primary" htmlType="submit">提交</Button>
             </FormItem>
           </Form>
         </div>
@@ -153,5 +121,5 @@ class Coach extends Component {
 
 
 
-export default Coach = Form.create({
-})(Coach);
+export default Question = Form.create({
+})(Question);

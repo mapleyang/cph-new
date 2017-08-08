@@ -157,23 +157,11 @@ class SelfCure extends Component {
   getPriceItem () {
     let item = "";
     let price = 0;
-    if(this.state.chooseSlections.length !== 0) {
-      this.state.chooseSlections.forEach(el => {
-        price += parseInt(el.price);
-      })
-      item = <div className="cure-main-price">
-        <span className="cure-main-price-title">价格合计：</span>
-        <span className="cure-main-price-mark">¥</span>
-        <span className="cure-main-price-value">{price}</span>
-      </div>
-    }
-    else {
-      item = <div className="cure-main-price">
-        <span className="cure-main-price-title">价格：</span>
-        <span className="cure-main-price-mark">¥</span>
-        <span className="cure-main-price-value">100 ~ 1000</span>
-      </div>
-    }
+    item = <div className="cure-main-price">
+      <span className="cure-main-price-title">价格合计：</span>
+      <span className="cure-main-price-mark">¥</span>
+      <span className="cure-main-price-value">0</span>
+    </div>
     return item;
   }
 
@@ -194,7 +182,7 @@ class SelfCure extends Component {
             <Col span={10}>
               <div className="cure-main-desc">
                 <div className="cure-main-name">自助戒烟</div>
-                <div className="cure-main-content medicine-main-content">参与我们的活动，去戒烟成功。</div>
+                <div className="cure-main-content medicine-main-content">使用我们的自助戒烟方案，并参与我们的活动，去完成戒烟历程。</div>
                 {this.getPriceItem()}
                 <div className="cure-main-items">
                   <div className="cure-main-item">

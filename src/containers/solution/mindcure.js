@@ -171,7 +171,7 @@ class MindCure extends Component {
       item = <div className="cure-main-price">
         <span className="cure-main-price-title">价格：</span>
         <span className="cure-main-price-mark">¥</span>
-        <span className="cure-main-price-value">100 ~ 1000</span>
+        <span className="cure-main-price-value">1500  </span>
       </div>
     }
     return item;

@@ -129,11 +129,11 @@ class MyPlan extends Component {
     })
   }
 
-  tasksEdit () {
+  tasksEdit (value) {
     // this.setState({
     //   visible: true
     // })
-    location.hash = "/plan"
+    location.hash = "/" + value;
   }
 
   quitStyle () {
@@ -191,7 +191,7 @@ class MyPlan extends Component {
         </div>
         <div className="myplan-list">
           <div className="myplan-item myplan-basic">
-            <div className="myplan-name myplan-name-basic" onClick={this.tasksEdit.bind(this)}>
+            <div className="myplan-name myplan-name-basic" onClick={this.tasksEdit.bind(this, "plan")}>
               <span>戒烟计划</span><Icon type="edit" />
             </div>
             <div className="myplan-item-basic">
@@ -201,19 +201,11 @@ class MyPlan extends Component {
             </div>
           </div>
           <div className="myplan-item myplan-commonweal">
-            <div className="myplan-name myplan-name-commonweal">
+            <div className="myplan-name myplan-name-commonweal" onClick={this.tasksEdit.bind(this, "world")}>
               <span>公益任务</span><Icon type="edit" />
             </div>
             <div className="myplan-item-commonweal myplan-item-area">
               {this.commonwealStyle()}
-            </div>
-          </div>
-          <div className="myplan-item myplan-share">
-            <div className="myplan-name myplan-name-share">
-              <span>分享任务</span><Icon type="edit" />
-            </div>
-            <div className="myplan-item-share myplan-item-area">
-              {this.shareStyle()}
             </div>
           </div>
         </div>
@@ -237,5 +229,14 @@ export default MyPlan = Form.create({
 //             </div>
 //             <div className="myplan-item-medicine myplan-item-area">
 //               {this.quitStyle()}
+//             </div>
+//           </div>
+
+// <div className="myplan-item myplan-share">
+//             <div className="myplan-name myplan-name-share">
+//               <span>分享任务</span><Icon type="edit" />
+//             </div>
+//             <div className="myplan-item-share myplan-item-area">
+//               {this.shareStyle()}
 //             </div>
 //           </div>
