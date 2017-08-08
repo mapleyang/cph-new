@@ -15,8 +15,8 @@ const knowlege = {
         value: "truth"
       },{
         name: "",
-        label: "",
-        value: ""
+        label: "二手烟无害?",
+        value: "superstition"
       }]
     }
   },
@@ -28,15 +28,15 @@ const knowlege = {
         value: "truth",
       },{
         name: "",
-        label: "戒烟症状是肥胖？",
+        label: "戒烟症状容易得肥胖症？",
         value: "truth"
       },{
         name: "",
         label: "绝大多数肺癌是由于吸烟引起",
         value: "truth"
       },{
-        label: "",
-        value: ""
+        label: "二手烟无害?",
+        value: "superstition"
       }]
     }
   }

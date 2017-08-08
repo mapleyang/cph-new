@@ -107,11 +107,92 @@ class MyPlan extends Component {
                 if(plan[key].length !== 0) {
                     li = <li><span className="myplan-basic-li">●</span><span>{"我吸烟的社交诱因为：" + plan[key].toString()}</span></li>
                 }
-              break;    
-            case "ridWay":
+              break;  
+            case "quitWay":
                 if(plan[key].length !== 0) {
+                    let columns = [{
+                      title: "方法",
+                      dataIndex: "title",
+                      key: "title"
+                    }]
+                    let value = [];
+                    plan[key].forEach(el => {
+                      if(el.flag) {
+                        value.push(el)
+                      }
+                    })
+                    if(value.length !== 0) {
+                      li = <div>
+                        <li><span className="myplan-basic-li">●</span><span>{"我可以克服烟瘾的方法有："}</span></li>
+                        <Table className="myplan-wards-table" columns={columns} dataSource={value} size="small" showHeader={false} pagination={false}/>
+                      </div>
+                    }
                 }
               break;   
+            case "ridWay":
+                if(plan[key].length !== 0) {
+                  let ridWayValue = [];
+                  plan[key].forEach(el => {
+                    if(el.flag) {
+                      ridWayValue.push(el.content)
+                    }
+                  })
+                  if(ridWayValue.length !== 0) {
+                    li = <li><span className="myplan-basic-li">●</span><span>{"我要做到以下：" + ridWayValue.toString()}</span></li>
+                  }
+                }
+              break;   
+            case "tellContact":
+                if(plan[key].value.length !== 0) {
+                  let value = [];
+                  plan[key].value.forEach(el => {
+                    if(el.flag) {
+                      value.push(el.text)
+                    }
+                  })
+                  if(value.length !== 0) {
+                    li = <li><span className="myplan-basic-li">●</span><span>{plan[key].label + "：" + value.toString()}</span></li>
+                  }
+                }
+              break;  
+            case "inviteContact":
+                if(plan[key].value.length !== 0) {
+                  let value = [];
+                  plan[key].value.forEach(el => {
+                    if(el.flag) {
+                      value.push(el.text)
+                    }
+                  })
+                  if(value.length !== 0) {
+                    li = <li><span className="myplan-basic-li">●</span><span>{plan[key].label + "：" + value.toString()}</span></li>
+                  }
+                }
+              break;   
+            case "wards":
+              let columns = [{
+                title: "戒烟里程碑",
+                dataIndex: "content",
+                key: "content"
+              },{
+                title: "奖励",
+                dataIndex: "value",
+                key: "value",
+              }]
+              if(plan[key].length !== 0) {
+                let wardsValue = [];
+                plan[key].forEach(el => {
+                  if(el.value !== "") {
+                    wardsValue.push(el)
+                  }
+                })
+                if(wardsValue.length !== 0) {
+                  li = <div>
+                    <li><span className="myplan-basic-li">●</span><span>我的戒烟奖励如下：</span></li>
+                    <Table className="myplan-wards-table" columns={columns} dataSource={wardsValue} size="small" showHeader={false} pagination={false}/>
+                  </div>
+                }
+              }
+            break; 
           }
           ele.push(li)
         }

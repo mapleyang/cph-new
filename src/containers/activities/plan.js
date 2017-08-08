@@ -63,6 +63,110 @@ class Plan extends Component {
         value: "7",
         flag: false,
         content: "对抗烟瘾要做的事情"
+      }],
+      wards: [{
+        num: "1",
+        content: "1周",
+        value: ""
+      },{
+        num: "2",
+        content: "2周",
+        value: ""
+      },{
+        num: "3",
+        content: "1月",
+        value: ""
+      },{
+        num: "4",
+        content: "1月",
+        value: ""
+      },{
+        num: "5",
+        content: "3月",
+        value: ""
+      },{
+        num: "6",
+        content: "6月",
+        value: ""
+      }],
+      tellContact: {
+        label: "你在戒烟期间所要告诉的人",
+        value: [{
+          num: "1",
+          text: "配偶", 
+          flag: false
+        },{
+          num: "2",
+          text: "孩子",
+          flag: false
+        },{
+          num: "3",
+          text: "其他家人",
+          flag: false
+        },{
+          num: "4",
+          text: "朋友",
+          flag: false
+        },{
+          num: "5",
+          text: "其他",
+          flag: false
+        }]
+      },
+      inviteContact: {
+        label: "你想邀请一起戒烟的人",
+        value: [{
+          num: "1",
+          text: "配偶", 
+          flag: false
+        },{
+          num: "2",
+          text: "孩子",
+          flag: false
+        },{
+          num: "3",
+          text: "其他家人",
+          flag: false
+        },{
+          num: "4",
+          text: "朋友",
+          flag: false
+        },{
+          num: "5",
+          text: "其他",
+          flag: false
+        }],
+      },
+      quitWay: [{
+        num: "1",
+        flag: false,
+        title: "Do you need to keep your hands and mouth busy?  ",
+        content: "Hold a straw in your hand and breathe through it Play with a coin or paperclip to keep your hands busy.",
+      },{
+        num: "2",
+        flag: false,
+        title: "Do you smoke to relieve stress or improve your mood?",
+        content: "Practice deep breathing to calm down or do some pushups to blow off steam Turn to friends, family, and counselors when you need someone to talk to."
+      },{
+        num: "3",
+        flag: false,
+        title: "Do you have trouble keeping busy and your mind occupied?",
+        content: "Make a list of tasks that you can accomplish when a craving hits. This list can include chores, replying to emails, running errands, or planning your schedule for the next day."
+      },{
+        num: "4",
+        flag: false,
+        title: "Do you smoke because its pleasurable and relaxing?",
+        content: "Treat yourself to a different pleasure. Listen to your favorite songs, plan a movie night with friends, or save up your cigarette money for a special treat when you reach a smokefree milestone."
+      },{
+        num: "5",
+        flag: false,
+        title: "Do you get irritable and anxious without cigarettes?",
+        content: "Nicotine replacement therapy (NRT), such as patches, gum, or lozenges, can help relieve your withdrawal symptoms. Talk to your doctor to see which type of NRT is right for you.",
+      },{
+        num: "6",
+        flag: false,
+        title: "Do you smoke for an energy boost?",
+        content: "To keep your energy level stable, get regular exercise and have healthy snacks throughout the day. Make sure you’re getting plenty of sleep at night to help you from feeling slow during the day."
       }]
     }
   }
@@ -102,7 +206,6 @@ class Plan extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log(values)
         let plan = {userName: "test"};
         for(let el in values) {
           if(values[el]) {
@@ -110,6 +213,11 @@ class Plan extends Component {
           }
         }
         plan.ridWay = this.state.ridWay;
+        plan.quitWay = this.state.quitWay;
+        plan.tellContact = this.state.tellContact;
+        plan.inviteContact = this.state.inviteContact;
+        plan.wards = this.state.wards;
+        console.log(plan)
         sessionStorage.removeItem("plan")
         sessionStorage.setItem("plan", JSON.stringify(plan));
         location.hash = "/myplan";
@@ -150,7 +258,6 @@ class Plan extends Component {
   getFormItems = () => {
     const { getFieldDecorator } = this.props.form;
     const defaultZH_EN = window.ZH_EN[language.getLanguage()];
-    console.log(defaultZH_EN["plan.createPlan"])
     let hrClassName = "";
     if(this.state.quitValue.length === 0) {
       hrClassName = "hr-none";
@@ -264,13 +371,13 @@ class Plan extends Component {
             <div>
               <div className="quitContact-title">请选择你在戒烟期间所要告诉的人</div>
               <div className="quitContact-content">
-                {this.getContact()}
+                {this.getContact("tell")}
               </div>
             </div>
             <div>
-              <div className="quitContact-title">请选择你在戒烟期间所要告诉的人</div>
+              <div className="quitContact-title">请选择你想邀请一起戒烟的人</div>
               <div className="quitContact-content">
-                {this.getContact()}
+                {this.getContact("invite")}
               </div>
             </div>
           </div>
@@ -301,26 +408,32 @@ class Plan extends Component {
     let item = "";
     let ele = [];
     let array = [{
+      num: "1",
       title: "Do you need to keep your hands and mouth busy?  ",
       content: "Hold a straw in your hand and breathe through it Play with a coin or paperclip to keep your hands busy.",
     },{
+      num: "2",
       title: "Do you smoke to relieve stress or improve your mood?",
       content: "Practice deep breathing to calm down or do some pushups to blow off steam Turn to friends, family, and counselors when you need someone to talk to."
     },{
+      num: "3",
       title: "Do you have trouble keeping busy and your mind occupied?",
       content: "Make a list of tasks that you can accomplish when a craving hits. This list can include chores, replying to emails, running errands, or planning your schedule for the next day."
     },{
+      num: "4",
       title: "Do you smoke because its pleasurable and relaxing?",
       content: "Treat yourself to a different pleasure. Listen to your favorite songs, plan a movie night with friends, or save up your cigarette money for a special treat when you reach a smokefree milestone."
     },{
+      num: "5",
       title: "Do you get irritable and anxious without cigarettes?",
       content: "Nicotine replacement therapy (NRT), such as patches, gum, or lozenges, can help relieve your withdrawal symptoms. Talk to your doctor to see which type of NRT is right for you.",
     },{
+      num: "6",
       title: "Do you smoke for an energy boost?",
       content: "To keep your energy level stable, get regular exercise and have healthy snacks throughout the day. Make sure you’re getting plenty of sleep at night to help you from feeling slow during the day."
     }]
     ele = array.map((el,index) => {
-      let header = <Checkbox onChange={this.quitWayClick.bind(this)}>{el.title}</Checkbox>
+      let header = <Checkbox onChange={this.quitWayClick.bind(this, el)}>{el.title}</Checkbox>
       return <Panel header={header} key={index}>
         <p>{el.content}</p>
       </Panel>
@@ -331,8 +444,17 @@ class Plan extends Component {
     return item;
   }
 
-  quitWayClick () {
-
+  quitWayClick (el, e) {
+    let quitWay = [];
+    quitWay = this.state.quitWay.map(item => {
+      if(el.num === item.num) {
+        item.flag = e.target.checked;
+      }
+      return item
+    })
+    this.setState({
+      quitWay: quitWay
+    })
   }
 
   ridSmoking () {
@@ -398,13 +520,64 @@ class Plan extends Component {
     })
   }
 
-  getContact () {
+  getContact (value) {
     let item = "";
-    let array = ["配偶", "孩子", "其他家人", "朋友", "朋友", "其他"];
+    let array = [{
+      num: "1",
+      text: "配偶", 
+      flag: false
+    },{
+      num: "2",
+      text: "孩子",
+      flag: false
+    },{
+      num: "3",
+      text: "其他家人",
+      flag: false
+    },{
+      num: "4",
+      text: "朋友",
+      flag: false
+    },{
+      num: "5",
+      text: "其他",
+      flag: false
+    }];
     item = array.map(el => {
-      return <Checkbox><span className="contact-checkbox">{el}</span></Checkbox>
+      return <Checkbox onChange={this.contactChange.bind(this, el, value)}><span className="contact-checkbox">{el.text}</span></Checkbox>
     })
     return item;
+  }
+
+  contactChange (el, value, e) {
+    if(value === "tell") {
+      let tellContact = this.state.tellContact;
+      let temp = [];
+      temp = this.state.tellContact.value.map(item => {
+        if(el.num === item.num) {
+          item.flag = e.target.checked;
+        }
+        return item
+      })
+      tellContact.value = temp;
+      this.setState({
+        tellContact: tellContact
+      })
+    }
+    else {
+      let inviteContact = this.state.inviteContact;
+      let temp = [];
+      temp = this.state.inviteContact.value.map(item => {
+        if(el.num === item.num) {
+          item.flag = e.target.checked;
+        }
+        return item
+      })
+      inviteContact.value = temp;
+      this.setState({
+        inviteContact: inviteContact
+      })
+    }
   }
 
   getTaskTable () {
@@ -451,7 +624,16 @@ class Plan extends Component {
   }
 
   wardChange (record, e) {
-
+    let wards = [];
+    wards = this.state.wards.map(el => {
+      if(el.num === record.num) {
+        el.value = e.target.value
+      }
+      return el
+    })
+    this.setState({
+      wards: wards
+    })
   }
 
   stylesChange () {

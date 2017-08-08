@@ -26,16 +26,16 @@ class Analysis extends Component {
       analysis: [],
       questionsTemp: [],
       series: [{
-        name: '良好',
-        data: [0.2 , 1, 0, 2, 0, 0]
-      }, {
-          name: '轻度',
-          data: [0, 0, 0, 0, 1.75, 0]
+        name: '轻度',
+        data: [0, 0.5, 0, 0.7, 0, 0]
       }, {
           name: '重度',
-          data: [0, 0, 0.75, 0, 0, 1.75]
+          data: [0, 0, 0, 0, 0.2, 0]
+      }, {
+          name: '一般',
+          data: [0, 0, 0.75, 0, 0, 1]
       }],
-      userValue: ""
+      userValue: "",
     }
   }
 
@@ -78,9 +78,9 @@ class Analysis extends Component {
     });
   }
 
-  createPlanClick () {
-    if(this.state.planValue === "0") {
-      location.hash = "/plan";
+  createPlanClick (flag) {
+    if(!flag) {
+      location.hash = "/world";
     }
     else {
       location.hash = "/plan";
@@ -198,7 +198,7 @@ class Analysis extends Component {
           
           break;
         case "":
-          var value = parseInt(el.value)
+          let value = parseInt(el.value)
           if(value < 5) {
             series[0].data[0] = value;
             series[1].data[0] = 0;
@@ -217,13 +217,13 @@ class Analysis extends Component {
         case "cigarette":
           var value = parseInt(el.value)
           if(value <= 10) {
-            series[0].data[0] = value;
+            series[0].data[0] = value * 0.1;
           }
           else if(value = 20) {
-            series[1].data[0] = value;
+            series[1].data[0] = value * 0.1;
           }
           else {
-            series[2].data[0] = value;
+            series[2].data[0] = value * 0.1;
           }
           break;
       }
@@ -357,6 +357,12 @@ class Analysis extends Component {
   render() {
     const defaultZH_EN = window.ZH_EN[language.getLanguage()];
     const { getFieldDecorator } = this.props.form;
+    let flag = false;
+    this.state.series.forEach(el => {
+      if(el.data[0] > 0) {
+        flag = true;
+      }
+    })
     return (
       <div className="analysis">
         <div className="analysis-form-name">戒烟问卷可以评估你的吸烟和相关健康状况，智能地给出定制化戒烟方案</div>
@@ -385,9 +391,9 @@ class Analysis extends Component {
           <Col span={10}>
             <div className="analysis-chartarea" id="analysis"></div>
             <div className="analysis-project">
-              <div className="analysis-plan-title">制定个人戒烟计划</div>
+              <div className="analysis-plan-title">{!flag ? "无吸烟习惯" : "制定个人戒烟计划"}</div>
               <div className="analysis-project-create">
-                <Button type="primary" onClick={this.createPlanClick.bind(this)}>创建戒烟计划>></Button>
+                <Button type="primary" onClick={this.createPlanClick.bind(this, flag)}>{!flag ? "点击进入无烟世界" : "制定个人戒烟计划"}>></Button>
               </div>
             </div>
           </Col>
