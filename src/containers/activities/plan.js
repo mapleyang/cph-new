@@ -140,33 +140,33 @@ class Plan extends Component {
       quitWay: [{
         num: "1",
         flag: false,
-        title: "Do you need to keep your hands and mouth busy?  ",
-        content: "Hold a straw in your hand and breathe through it Play with a coin or paperclip to keep your hands busy.",
+        title: "不吸烟让你总觉得手和嘴里少了什么东西？ ",
+        content: "准备一根吸管，玩压力球，银币，嚼口香糖",
       },{
         num: "2",
         flag: false,
-        title: "Do you smoke to relieve stress or improve your mood?",
-        content: "Practice deep breathing to calm down or do some pushups to blow off steam Turn to friends, family, and counselors when you need someone to talk to."
+        title: "吸烟让你愉悦和放松？",
+        content: "做你喜欢的其它事情，听音乐，和朋友看一场新电影参加各种体育活动"
       },{
         num: "3",
         flag: false,
-        title: "Do you have trouble keeping busy and your mind occupied?",
-        content: "Make a list of tasks that you can accomplish when a craving hits. This list can include chores, replying to emails, running errands, or planning your schedule for the next day."
+        title: "你需要吸烟提神和精力充沛？",
+        content: "经常的体育锻炼和健康饮食充足的睡眠"
       },{
         num: "4",
         flag: false,
-        title: "Do you smoke because its pleasurable and relaxing?",
-        content: "Treat yourself to a different pleasure. Listen to your favorite songs, plan a movie night with friends, or save up your cigarette money for a special treat when you reach a smokefree milestone."
+        title: "你需要吸烟缓解压力和情绪？",
+        content: "使用放松技巧，如做深呼吸或俯卧撑打电话给支持你的人"
       },{
         num: "5",
         flag: false,
-        title: "Do you get irritable and anxious without cigarettes?",
-        content: "Nicotine replacement therapy (NRT), such as patches, gum, or lozenges, can help relieve your withdrawal symptoms. Talk to your doctor to see which type of NRT is right for you.",
+        title: "不吸烟让你焦虑和易怒？",
+        content: "采用放松技术，如冥想和体育锻炼尼古丁替代治疗（如尼古丁贴片和尼古丁口香糖）能缓解戒断症状。可咨询医疗人员何种药物最适合你。",
       },{
         num: "6",
         flag: false,
-        title: "Do you smoke for an energy boost?",
-        content: "To keep your energy level stable, get regular exercise and have healthy snacks throughout the day. Make sure you’re getting plenty of sleep at night to help you from feeling slow during the day."
+        title: "不吸烟让你精力无法集中，无所事事？",
+        content: "可以事先列出烟瘾发作时的任务清单做家务，整理房间和物品，联系的老朋友，回电子邮件，完成未完成的差事等"
       }]
     }
   }
@@ -409,28 +409,28 @@ class Plan extends Component {
     let ele = [];
     let array = [{
       num: "1",
-      title: "Do you need to keep your hands and mouth busy?  ",
-      content: "Hold a straw in your hand and breathe through it Play with a coin or paperclip to keep your hands busy.",
+      title: "不吸烟让你总觉得手和嘴里少了什么东西？ ",
+      content: "准备一根吸管，玩压力球，银币，嚼口香糖",
     },{
       num: "2",
-      title: "Do you smoke to relieve stress or improve your mood?",
-      content: "Practice deep breathing to calm down or do some pushups to blow off steam Turn to friends, family, and counselors when you need someone to talk to."
+      title: "吸烟让你愉悦和放松？",
+      content: "做你喜欢的其它事情，听音乐，和朋友看一场新电影参加各种体育活动"
     },{
       num: "3",
-      title: "Do you have trouble keeping busy and your mind occupied?",
-      content: "Make a list of tasks that you can accomplish when a craving hits. This list can include chores, replying to emails, running errands, or planning your schedule for the next day."
+      title: "你需要吸烟提神和精力充沛？",
+      content: "经常的体育锻炼和健康饮食充足的睡眠"
     },{
       num: "4",
-      title: "Do you smoke because its pleasurable and relaxing?",
-      content: "Treat yourself to a different pleasure. Listen to your favorite songs, plan a movie night with friends, or save up your cigarette money for a special treat when you reach a smokefree milestone."
+      title: "你需要吸烟缓解压力和情绪？",
+      content: "使用放松技巧，如做深呼吸或俯卧撑打电话给支持你的人"
     },{
       num: "5",
-      title: "Do you get irritable and anxious without cigarettes?",
-      content: "Nicotine replacement therapy (NRT), such as patches, gum, or lozenges, can help relieve your withdrawal symptoms. Talk to your doctor to see which type of NRT is right for you.",
+      title: "不吸烟让你焦虑和易怒？",
+      content: "采用放松技术，如冥想和体育锻炼尼古丁替代治疗（如尼古丁贴片和尼古丁口香糖）能缓解戒断症状。可咨询医疗人员何种药物最适合你。",
     },{
       num: "6",
-      title: "Do you smoke for an energy boost?",
-      content: "To keep your energy level stable, get regular exercise and have healthy snacks throughout the day. Make sure you’re getting plenty of sleep at night to help you from feeling slow during the day."
+      title: "不吸烟让你精力无法集中，无所事事？",
+      content: "可以事先列出烟瘾发作时的任务清单做家务，整理房间和物品，联系的老朋友，回电子邮件，完成未完成的差事等"
     }]
     ele = array.map((el,index) => {
       let header = <Checkbox onChange={this.quitWayClick.bind(this, el)}>{el.title}</Checkbox>

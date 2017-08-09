@@ -112,8 +112,8 @@ class MyPlan extends Component {
                 if(plan[key].length !== 0) {
                     let columns = [{
                       title: "方法",
-                      dataIndex: "title",
-                      key: "title"
+                      dataIndex: "content",
+                      key: "content"
                     }]
                     let value = [];
                     plan[key].forEach(el => {
