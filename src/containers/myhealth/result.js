@@ -18,7 +18,7 @@ class Result extends Component {
       <div className="result myhealth">
         <Row>
           <Col span={18} className="result-content">
-            <div>连续N天戒烟成功，请继续坚持。</div>
+            <div>连续1天戒烟成功，请继续坚持。</div>
           </Col>
           <Col span={6}>
             <div className="result-list">
