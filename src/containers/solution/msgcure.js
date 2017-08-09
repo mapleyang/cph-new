@@ -161,7 +161,7 @@ class MsgCure extends Component {
     item = <div className="cure-main-price">
       <span className="cure-main-price-title">价格合计：</span>
       <span className="cure-main-price-mark">¥</span>
-      <span className="cure-main-price-value">300</span>
+      <span className="cure-main-price-value">350</span>
     </div>
     // if(this.state.chooseSlections.length !== 0) {
     //   this.state.chooseSlections.forEach(el => {
