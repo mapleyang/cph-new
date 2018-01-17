@@ -1,6 +1,6 @@
 {
-  "name": "react-starter-kit",
-  "version": "0.2.0",
+  "name": "cph",
+  "version": "0.0.1",
   "description": "Get started with React, Redux, and React-Router!",
   "main": "index.js",
   "engines": {
@@ -49,18 +49,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bodyno/react-starter-kit.git"
+    "url": "git@github.com:mapleyang/cph.git"
   },
-  "author": "mapple",
+  "author": "mapleyang",
   "license": "WTFPL",
   "dependencies": {
     "antd": "^2.7.4",
-    "antd-mobile": "^0.9.14",
-    "babel-plugin-antd": "^0.5.1",
-    "extract-text-webpack-plugin": "^1.0.0",
-    "highcharts": "^v5.0.9",
-    "highcharts-more": "^0.1.2",
-    "html-webpack-plugin": "^2.22.0",
     "jquery": "^3.2.1",
     "react": "^15.0.0",
     "react-addons-css-transition-group": "^15.4.2",
@@ -70,11 +64,12 @@
     "react-redux": "^5.0.1",
     "react-router": "^2.8.0",
     "react-spinkit": "^1.1.11",
-    "redux": "^3.6.0",
-    "redux-thunk": "^2.0.0",
     "scriptjs": "^2.5.8"
   },
   "devDependencies": {
+    "extract-text-webpack-plugin": "^1.0.0",
+    "html-webpack-plugin": "^2.22.0",
+    "babel-plugin-antd": "^0.5.1",
     "babel-core": "^6.17.0",
     "babel-eslint": "^6.0.0-beta.6",
     "babel-loader": "^6.2.5",
