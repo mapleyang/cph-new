@@ -1,52 +1,14 @@
-.truth {
-  background: #F2F6F9;
-  width: 100%;
-  height: 100%;
-  .truth-area {
-    height: 100%;
-    width: 80%;
-    margin: 0 auto;
-    position: relative;
-    top: 40px;
-    .truth-card {
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 1px 0px #eee;
-      float: left;
-      width: 30%;
-      text-align: center;
-      margin-right: 20px;
-      border-top: 1px #eee solid;
-      border-left: 1px #eee solid;
-      border-right: 1px #eee solid;
-      margin-bottom: 20px;
-      .truth-card-desc {
-        height: 100px;
-        span {
-          display: inline-block;
-          margin-top: 40px;
-        }
-      }
-      .truth-card-operate-button {
-        border: 1px #eee solid;
-        height: 30px;
-        line-height: 30px;
-        cursor: pointer;
-      }
-      .truth-card-operate-button:hover {
-        background: #0c5b79;
-        color: #fff;
-      }
-      .truth-card-operate-selected {
-        background: #0c5b79;
-        color: #fff;
-      }
-      .truth-card-operate-mistask {
-        background: #EB3941;
-        color: #fff;
-      }
-    }
-  }
+.cph-button {
+  background-color: #0c5b79;
+  border-color: #0c5b79;
+}
+.cph-button:hover {
+  background-color: #0c5b79;
+  border-color: #0c5b79;
+}
+.cph-button:focus {
+  background-color: #0c5b79;
+  border-color: #0c5b79;
 }
 .compete {
   width: 100%;
@@ -54,14 +16,13 @@
   background: #F2F6F9;
   .compete-area {
     background: #fff;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
-    height: 80%;
     position: relative;
-    top: 20px;
+    top: 40px;
     border: 1px #eee solid;
     .compete-progress {
-      width: 80%;
+      width: 85%;
       height: 80px;
       margin: 0 auto;
       .ant-progress {
@@ -76,51 +37,18 @@
       margin: 0 auto;
       .ant-radio-wrapper {
         display: block;
-        margin-top: 10px;
+        margin-bottom: 10px;
       }
+    }
+    .compete-button-area {
+      text-align: center;
+      padding-top: 50px;
+      padding-bottom: 50px;
     }
   }
-}
-.disease {
-  width: 100%;
-  background: #F2F6F9;
-  .disease-area {
-    width: 80%;
-    position: relative;
-    top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    background: #fff;
-    border: 1px #eee solid;
-    .disease-title {
-      font-size: 20px;
-      line-height: 50px;
-      padding-left: 20px;
-    }
-    .disease-desc {
-      .disease-desc-title {
-        height: 40px;
-        line-height: 40px;
-        padding-left: 20px;
-        font-weight: bold;
-      }
-      .disease-desc-content {
-        padding-left: 20px;
-        margin-bottom: 20px;
-        float: left;
-        .desc-content-item {
-          line-height: 40px;
-        }
-      }
-      .disease-desc-img {
-        text-align: right;
-        img {
-          width: 60%;
-        }
-      }
-    }
-  }
-  .disease-bottom {
-    height: 20px;
+  .rate {
+    font-size: 40px;
+    color: #0c5b79;
+    margin-bottom: 60px;
   }
 }
